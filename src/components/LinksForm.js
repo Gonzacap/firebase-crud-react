@@ -42,7 +42,7 @@ const LinksForm = ( { addOrEditLink, currentId } ) => {
           <i className="material-symbols-outlined">insert_link</i>
         </div>
         <input
-          type="text"
+          type="url"
           className="form-control"
           placeholder="https://someurl.xyz"
           value={values.url}
