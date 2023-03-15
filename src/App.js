@@ -14,8 +14,8 @@ function App() {
           <Links />
         </div>
       </main>
-      <footer className="footer page-footer font-small blue pt-4 bg-light" >
-        <div className="footer-copyright text-center py-3">© 2020 Copyright:
+      <footer className="footer page-footer font-small blue pt-4" >
+        <div className="footer-copyright text-center py-3 bg-light">© 2020 Copyright:
         <a href="https://github.com/Gonzacap//"> Gonza Lopez</a>
         </div>
       </footer>
