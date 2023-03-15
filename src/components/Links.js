@@ -41,10 +41,14 @@ const Links = () => {
     }
   };
 
+  const cancelUpdate = () => {
+    setCurrentId("");
+  };
+
   return (
     <>
       <div className="col-md-4 p-2 my-2">
-        <LinksForm {...{ addOrEditLink, currentId, links }} />
+        <LinksForm {...{ addOrEditLink, cancelUpdate, currentId, links }} />
       </div>
       <div className="col-md-8 p-2">
         {links.map((link) => (

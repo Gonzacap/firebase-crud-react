@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 
-const LinksForm = ( { addOrEditLink, currentId } ) => {
+const LinksForm = ( { addOrEditLink, cancelUpdate, currentId } ) => {
   const initialStateValues = {
     url: "",
     name: "",
@@ -24,6 +24,12 @@ const LinksForm = ( { addOrEditLink, currentId } ) => {
   const getLinkById = async (id) => {
     const doc = await db.collection("links").doc(id).get();
     setValues({ ...doc.data() });
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    cancelUpdate();
+    setValues({...initialStateValues});
   };
 
   useEffect(() => {
@@ -79,6 +85,14 @@ const LinksForm = ( { addOrEditLink, currentId } ) => {
       <button className="btn btn-primary btn-block">
         {currentId === "" ? "Save" : "Update"}
       </button>
+      { currentId && (
+        <button 
+          className="btn btn-secondary btn-block"
+          onClick={handleCancel}
+        >
+          Cancel
+        </button>
+      ) }
     </form>
   );
 };
